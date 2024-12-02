@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:660298734324:android:00fd8384f71b7969f05ca1",
+        "android_client_info": {
+          "package_name": "br.com.cooker_plannner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi_OWIR3BGpmkYweXqX4lL9DWCuCEn2eo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:660298734324:android:b24a78dfe78bb2ccf05ca1",
         "android_client_info": {
           "package_name": "com.example.app_receitas"
