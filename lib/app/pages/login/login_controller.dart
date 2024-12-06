@@ -91,16 +91,24 @@ class LoginController{
     if(emailController.text.isNotEmpty &&
         nomeCompletoController.text.isNotEmpty &&
         senhaController.text.isNotEmpty ) {
-      usuario.email = emailController.text;
-      usuario.nome = nomeCompletoController.text;
-      usuario.password = senhaController.text;
-      resultCadastro = await dbLogin.cadastrarUsuario(usuario);
-      if (resultCadastro) {
-        print("novo usuario criado com sucesso:${usuario.email}");
-        print("---------Sucesso");
-        resultCadastro = true;
+      if(senhaController.text.length < 6 ){
+        Fluttertoast.showToast(
+            msg: 'A senha cadastrada deve conter pelo menos 6 caracteres',
+            timeInSecForIosWeb:3,
+            backgroundColor: Colors.red);
       }else{
-        resultCadastro = false;
+        usuario.email = emailController.text;
+        usuario.nome = nomeCompletoController.text;
+        usuario.password = senhaController.text;
+        resultCadastro = await dbLogin.cadastrarUsuario(usuario);
+        if (resultCadastro) {
+          print("novo usuario criado com sucesso:${usuario.email}");
+          print("---------Sucesso");
+          resultCadastro = true;
+        }else{
+          resultCadastro = false;
+        }
+
       }
     }else{
       Fluttertoast.showToast(
